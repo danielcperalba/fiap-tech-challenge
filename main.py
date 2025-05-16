@@ -1,6 +1,13 @@
 from fastapi import FastAPI
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from sqlalchemy.orm import Session
+from database import engine, get_db, Base
+from crud import get_producao, get_processamento, get_comercializacao, get_importacao, get_exportacao
+from models import Producao, Processamento, Comercializacao, Importacao, Exportacao
+from schemas import ProducaoResponse, ProcessamentoResponse, ComercializacaoResponse, ImportacaoResponse, ExportacaoResponse
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Tech Challenge",
@@ -32,20 +39,25 @@ async def home(username: str = Depends(verify_password)):
 
 @app.get("/producao")
 async def home(username: str = Depends(verify_password)):
-    return "Produção"
+    producao = get_producao()
+    return producao
 
 @app.get("/processamento")
 async def home(username: str = Depends(verify_password)):
-    return "Processamento"
+    processamento = get_processamento()
+    return processamento
 
 @app.get("/comericalizacao")
 async def home(username: str = Depends(verify_password)):
-    return "Comercialização"
+    comercializacao = get_comercializacao()
+    return comercializacao
 
 @app.get("/importacao")
 async def home(username: str = Depends(verify_password)):
-    return "Hello World"
+    importacao = get_importacao()
+    return importacao
 
 @app.get("/exportacao")
 async def home(username: str = Depends(verify_password)):
-    return "Exportação"
+    exportacao = get_exportacao()
+    return exportacao
