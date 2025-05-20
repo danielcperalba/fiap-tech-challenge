@@ -22,5 +22,3 @@ for url in urls:
         line = [col.get_text(strip=True) for col in cols]
         dados_processamento.append(line)
     
-    for line in dados_processamento:
-        print(line)

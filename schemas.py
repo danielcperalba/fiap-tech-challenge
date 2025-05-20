@@ -1,28 +1,51 @@
 from pydantic import BaseModel
-class ProducaoResponse(BaseModel):
-    id: int
+
+# Esquemas para validação dos dados
+
+# PRODUÇÃO
+
+class ProducaoBase(BaseModel):
     produto: str
     quantidade: float
+    
+class ProducaoCreate(ProducaoBase):
+    pass
+
+# PROCESSAMENTO
         
-class ProcessamentoResponse(BaseModel):
-    id: int
+class ProcessamentoBase(BaseModel):
     cultivar: str
     quantidade: float
-        
-class ComercializacaoResponse(BaseModel):
-    id: int
+    
+class ProcessamentoCreate(ProcessamentoBase):
+    pass
+
+# COMERCIALIZAÇÃO
+    
+class ComercializacaoBase(BaseModel):
     produto: str
     quantidade: float
-        
-class ImportacaoResponse(BaseModel):
-    id: int
+    
+class ComercializacaoCreate(ComercializacaoBase):
+    pass
+   
+# IMPORTAÇÃO
+     
+class ImportacaoBase(BaseModel):
     pais: str
     quantidade: int
     valor: float
+
+class ImportacaoCreate(ImportacaoBase):
+    pass
         
-class ExportacaoResponse(BaseModel):
-    id: int
+# EXPORTAÇÃO
+
+class ExportacaoBase(BaseModel):
     pais: str
     quantidade: int
     valor: float
+
+class ExportacaoCreate(ExportacaoBase):
+    pass
         

@@ -23,5 +23,3 @@ for url in urls:
         line = [col.get_text(strip=True) for col in cols]
         dados_importacao.append(line)
     
-    for line in dados_importacao:
-        print(line)

@@ -9,6 +9,8 @@ fastapi = "*"
 sqlalchemy = "*"
 pydantic = "*"
 db-sqlite3 = "*"
+beautifulsoup4 = "*"
+requests = "*"
 
 [dev-packages]
 
