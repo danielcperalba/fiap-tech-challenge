@@ -11,6 +11,8 @@ pydantic = "*"
 db-sqlite3 = "*"
 beautifulsoup4 = "*"
 requests = "*"
+pytest = "*"
+httpx = "*"
 
 [dev-packages]
 

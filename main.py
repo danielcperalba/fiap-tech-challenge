@@ -172,7 +172,7 @@ async def home(db: Session = Depends(get_db), username: str = Depends(verify_pas
     dados = res.scalars().all()
     return dados
 
-@app.get("/comericalizacao", response_model=List[schemas.ComercializacaoBase], description="Retorna todos os dados de comercialização")
+@app.get("/comercializacao", response_model=List[schemas.ComercializacaoBase], description="Retorna todos os dados de comercialização")
 async def home(db: Session = Depends(get_db), username: str = Depends(verify_password)):
     # Cria a query que faz a consulta no banco de dados
     query = select(models.Comercializacao)
