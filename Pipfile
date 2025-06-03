@@ -6,13 +6,13 @@ name = "pypi"
 [packages]
 uvicorn = "*"
 fastapi = "*"
-sqlalchemy = "*"
 pydantic = "*"
 db-sqlite3 = "*"
 beautifulsoup4 = "*"
 requests = "*"
 pytest = "*"
 httpx = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 
